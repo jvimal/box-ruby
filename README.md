@@ -8,6 +8,12 @@ You can use the Box.net API to create applications and websites that integrate w
 * Move, rename and delete files
 * Share files
 
+### Install ###
+
+    gem install box-api
+
+That's it!
+
 ### Usage ###
 
 You must first obtain an API key by [registering your Box.net application](http://www.box.net/developers/services).
