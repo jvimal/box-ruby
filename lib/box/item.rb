@@ -11,6 +11,7 @@ module Box
       update_info(info) # merges with the info hash, and renames some fields
     end
 
+    # return the string representation of this item (file or folder)
     def self.type; raise "Overwrite this method"; end
     def self.types; type + 's'; end
 
@@ -29,6 +30,7 @@ module Box
 
       self
     end
+
     # move the item to the destination folder
     def move(destination)
       @api.move(type, id, destination.id)
@@ -69,6 +71,7 @@ module Box
       self
     end
 
+    # set the description of the item
     def description(message)
       @api.set_description(type, id, message)
 
@@ -102,10 +105,11 @@ module Box
     # sub-classes are meant to implement this
     def get_info(*args); Hash.new; end
 
+    # takes in a hash of info, cleans it, and merges it into the existing info
     def update_info(info)
       ninfo = Hash.new
 
-      # the api is stupid and some fields are named 'file_id' or 'id' inconsistently, so trim the type off
+      # some fields are named 'file_id' or 'id' inconsistently, so trim the type off
       info.each do |name, value|
         if name.to_s =~ /^#{ type }_(.+)$/; ninfo[$1] = value
         else; ninfo[name.to_s] = value; end
@@ -114,11 +118,13 @@ module Box
       @data.merge!(ninfo) # merge in the updated info
     end
 
+    # delete the cache for a specific info
     def delete_info(field)
       @cached_info = false
       @data.delete(field)
     end
 
+    # delete the entire cache
     def clear_info
       @cached_info = false
       @data.clear

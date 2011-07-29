@@ -7,6 +7,7 @@ module Box
 
     def self.type; 'folder'; end
 
+    # override the existing info method so that we create empty folders/files first
     def info(refresh = false)
       return self if @cached_info and not refresh
 
@@ -103,6 +104,7 @@ module Box
       end
     end
 
+    # update the cached status of all sub items, as we got the entire tree
     def force_cached_tree
       create_sub_items(nil, Box::Folder)
       create_sub_items(nil, Box::File)
@@ -119,6 +121,7 @@ module Box
       end
     end
 
+    # search for any files/folders that match the criteria sent
     def find!(criteria, recursive)
       matches = (files + folders).collect do |item| # search over our files and folders
         match = criteria.all? do |key, value| # make sure all criteria pass
