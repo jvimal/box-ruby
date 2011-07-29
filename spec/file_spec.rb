@@ -9,7 +9,7 @@ describe Box::File do
   describe "operations" do
     before(:all) do
       @root = get_root
-      spec = @root.find(:name => 'rspec folder', :type => 'folder', :recursive => false).first
+      spec = @root.find(:name => 'rspec folder', :type => 'folder').first
       spec.delete if spec
     end
 

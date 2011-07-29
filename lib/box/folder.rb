@@ -50,7 +50,7 @@ module Box
     # search for items using criteria
     def find(criteria)
       recursive = criteria.delete(:recursive)
-      recursive = true if recursive == nil # default to true
+      recursive = false if recursive == nil # default to false for performance reasons
 
       tree if recursive # get the full tree
 
