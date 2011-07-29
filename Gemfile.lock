@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    box-api (0.1.6)
+    box-api (0.1.7)
       httmultiparty (~> 0.3)
 
 GEM
