@@ -6,6 +6,8 @@ module Box
   class Api
     include HTTMultiParty # a slight modification to HTTParty, adding multi-part upload support
 
+    attr_accessor :base_url, :upload_url
+
     def initialize(key, url = 'https://box.net', upload_url = 'https://upload.box.net', version = '1.0')
       @default_params = { :api_key => key } # add the api_key to every query
 

@@ -54,7 +54,7 @@ module Box
 
     # the user must visit this url to allow the application to access their account
     def authorize_url(ticket = self.ticket)
-      "#{ api.url }/auth/#{ ticket }"
+      "#{ api.base_url }/auth/#{ ticket }"
     end
 
     # using the ticket, we get the auth_token providing the user has already allowed our application the privilege
