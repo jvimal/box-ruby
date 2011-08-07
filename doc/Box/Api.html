@@ -1,0 +1,3392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Box::Api
+  
+    &mdash; Documentation by YARD 0.7.2
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (A)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Box.html" title="Box (module)">Box</a></span></span>
+     &raquo; 
+    <span class="title">Api</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Box::Api
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Box::Api</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2">HTTMultiParty</dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/box/api.rb<span class="defines">,<br />
+  lib/box/api/exceptions.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+A wrapper and interface to the Box api. Please visit the Box developers
+site for a full explaination of what each of the Box api methods expect and
+perform. TODO: Link to the site.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+   
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Api/AccountExceeded.html" title="Box::Api::AccountExceeded (class)">AccountExceeded</a></span>, <span class='object_link'><a href="Api/EmailInvalid.html" title="Box::Api::EmailInvalid (class)">EmailInvalid</a></span>, <span class='object_link'><a href="Api/EmailTaken.html" title="Box::Api::EmailTaken (class)">EmailTaken</a></span>, <span class='object_link'><a href="Api/ErrorStatus.html" title="Box::Api::ErrorStatus (class)">ErrorStatus</a></span>, <span class='object_link'><a href="Api/Exception.html" title="Box::Api::Exception (class)">Exception</a></span>, <span class='object_link'><a href="Api/Generic.html" title="Box::Api::Generic (class)">Generic</a></span>, <span class='object_link'><a href="Api/InvalidFolder.html" title="Box::Api::InvalidFolder (class)">InvalidFolder</a></span>, <span class='object_link'><a href="Api/InvalidInput.html" title="Box::Api::InvalidInput (class)">InvalidInput</a></span>, <span class='object_link'><a href="Api/InvalidName.html" title="Box::Api::InvalidName (class)">InvalidName</a></span>, <span class='object_link'><a href="Api/NameTaken.html" title="Box::Api::NameTaken (class)">NameTaken</a></span>, <span class='object_link'><a href="Api/NoAccess.html" title="Box::Api::NoAccess (class)">NoAccess</a></span>, <span class='object_link'><a href="Api/NoParent.html" title="Box::Api::NoParent (class)">NoParent</a></span>, <span class='object_link'><a href="Api/NotAuthorized.html" title="Box::Api::NotAuthorized (class)">NotAuthorized</a></span>, <span class='object_link'><a href="Api/Restricted.html" title="Box::Api::Restricted (class)">Restricted</a></span>, <span class='object_link'><a href="Api/SizeExceeded.html" title="Box::Api::SizeExceeded (class)">SizeExceeded</a></span>, <span class='object_link'><a href="Api/Unknown.html" title="Box::Api::Unknown (class)">Unknown</a></span>, <span class='object_link'><a href="Api/UnknownResponse.html" title="Box::Api::UnknownResponse (class)">UnknownResponse</a></span>, <span class='object_link'><a href="Api/UploadFailed.html" title="Box::Api::UploadFailed (class)">UploadFailed</a></span>
+    
+  
+</p>
+
+
+  
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#base_url-instance_method" title="#base_url (instance method)">- (Object) <strong>base_url</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute base_url.
+</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#upload_url-instance_method" title="#upload_url (instance method)">- (Object) <strong>upload_url</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the value of attribute upload_url.
+</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+  
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_exception-class_method" title="get_exception (class method)">+ (Exception) <strong>get_exception</strong>(status) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Given a status, returning a cooresponding Exception class.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#copy-instance_method" title="#copy (instance method)">- (Object) <strong>copy</strong>(target, target_id, destination_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Copy the the item to a new destination.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_folder-instance_method" title="#create_folder (instance method)">- (Object) <strong>create_folder</strong>(parent_id, name, share = 0) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Create a new folder.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong>(target, target_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Delete the item.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#download-instance_method" title="#download (instance method)">- (Object) <strong>download</strong>(path, file_id, version = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Download the file to the given path.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_account_info-instance_method" title="#get_account_info (instance method)">- (Object) <strong>get_account_info</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Get the user&#8217;s account info.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_account_tree-instance_method" title="#get_account_tree (instance method)">- (Object) <strong>get_account_tree</strong>(folder_id, *args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Get the entire tree of a given folder.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_auth_token-instance_method" title="#get_auth_token (instance method)">- (Object) <strong>get_auth_token</strong>(ticket) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Request an auth token given a ticket.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_file_info-instance_method" title="#get_file_info (instance method)">- (Object) <strong>get_file_info</strong>(file_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Get the file info.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_ticket-instance_method" title="#get_ticket (instance method)">- (Object) <strong>get_ticket</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Request a ticket for authorization.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_response-instance_method" title="#handle_response (instance method)">- (Hash) <strong>handle_response</strong>(response, expected = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Handle the response of the request.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Api) <strong>initialize</strong>(key, url = 'https://box.net', upload_url = 'https://upload.box.net', version = '1.0') </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Create a new API object using the given parameters.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#logout-instance_method" title="#logout (instance method)">- (Object) <strong>logout</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Request the user be logged out.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#move-instance_method" title="#move (instance method)">- (Object) <strong>move</strong>(target, target_id, destination_id) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Move the item to a new destination.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_copy-instance_method" title="#new_copy (instance method)">- (Object) <strong>new_copy</strong>(path, file_id, name = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Upload a new copy of the given file.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#overwrite-instance_method" title="#overwrite (instance method)">- (Object) <strong>overwrite</strong>(path, file_id, name = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Overwrite the given file with a new one.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#query_download-instance_method" title="#query_download (instance method)">- (Object) <strong>query_download</strong>(query, args, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Make a download request.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#query_raw-instance_method" title="#query_raw (instance method)">- (Hash) <strong>query_raw</strong>(method, url, expected, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Make a raw request.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#query_rest-instance_method" title="#query_rest (instance method)">- (Hash) <strong>query_rest</strong>(expected, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Make a normal REST request.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#query_upload-instance_method" title="#query_upload (instance method)">- (Hash) <strong>query_upload</strong>(query, args, expected, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Make an upload request.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_new_user-instance_method" title="#register_new_user (instance method)">- (Object) <strong>register_new_user</strong>(email, password) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Register a new user.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rename-instance_method" title="#rename (instance method)">- (Object) <strong>rename</strong>(target, target_id, new_name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Rename the item.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_auth_token-instance_method" title="#set_auth_token (instance method)">- (Object) <strong>set_auth_token</strong>(auth_token) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Add the auth token to every request.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_description-instance_method" title="#set_description (instance method)">- (Object) <strong>set_description</strong>(target, target_id, description) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Set the item description.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#upload-instance_method" title="#upload (instance method)">- (Object) <strong>upload</strong>(path, folder_id, new_copy = false) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Upload the file to the specified folder.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#verify_registration_email-instance_method" title="#verify_registration_email (instance method)">- (Object) <strong>verify_registration_email</strong>(email) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Verify a registration email.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Box::Api (class)">Api</a></span></tt>) <strong>initialize</strong>(key, url = 'https://box.net', upload_url = 'https://upload.box.net', version = '1.0') 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong> 
+    <div class='inline'><p>
+Chances are that if the Box api is updated or moves location, this class
+will no longer work. However, the option to change the defaults still
+remains.
+</p>
+</div>
+  </div>
+
+<p>
+Create a new API object using the given parameters.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>key</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the api key for your application. You can request one on the Box website at
+<a href="http://www.box.net/developers/services" target="_parent" title="http://www.box.net/developers/services">http://www.box.net/developers/services</a>
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>url</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>'https://box.net'</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the url of the Box api.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>upload_url</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>'https://upload.box.net'</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the url of the upload host for the Box api.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>version</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>'1.0'</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the version of the Box api in use.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id key'>key</span><span class='comma'>,</span> <span class='id url'>url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>https://box.net</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id upload_url'>upload_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>https://upload.box.net</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id version'>version</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>1.0</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='ivar'>@default_params</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:api_key</span> <span class='op'>=&gt;</span> <span class='id key'>key</span> <span class='rbrace'>}</span> <span class='comment'># add the api_key to every query
+</span>
+  <span class='ivar'>@base_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span> <span class='id url'>url</span> <span class='rbrace'>}</span><span class='tstring_content'>/api/</span><span class='embexpr_beg'>#{</span> <span class='id version'>version</span> <span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># set the base of the request url
+</span>  <span class='ivar'>@upload_url</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span> <span class='id upload_url'>upload_url</span> <span class='rbrace'>}</span><span class='tstring_content'>/api/</span><span class='embexpr_beg'>#{</span> <span class='id version'>version</span> <span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># uploads use a different url than everything else
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="base_url=-instance_method"></span>
+      <span id="base_url-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="base_url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>base_url</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute base_url
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id base_url'>base_url</span>
+  <span class='ivar'>@base_url</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="upload_url=-instance_method"></span>
+      <span id="upload_url-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="upload_url-instance_method">
+  
+    - (<tt>Object</tt>) <strong>upload_url</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the value of attribute upload_url
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='id upload_url'>upload_url</span>
+  <span class='ivar'>@upload_url</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="get_exception-class_method">
+  
+    + (<tt><span class='object_link'><a href="Api/Exception.html" title="Box::Api::Exception (class)">Exception</a></span></tt>) <strong>get_exception</strong>(status) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Given a status, returning a cooresponding Exception class.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>status</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The failing status to look for.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Api/Exception.html" title="Box::Api::Exception (class)">Exception</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A coorespondng Exception.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api/exceptions.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id get_exception'>get_exception</span><span class='lparen'>(</span><span class='id status'>status</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id status'>status</span>
+  <span class='comment'># Common responses
+</span>  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>application_restricted</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>Restricted</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wrong_input</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Wrong input params</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>InvalidInput</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>not_logged_in</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>wrong auth token</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>NotAuthorized</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_no_access</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_access_denied</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>access_denied</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>NoAccess</span>
+  <span class='comment'># Registration specific responses
+</span>  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>email_invalid</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>EmailInvalid</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>email_already_registered</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>EmailTaken</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>get_auth_token_error</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_register</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>Generic</span>
+  <span class='comment'># Folder/File specific responses
+</span>  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_folder_id</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>InvalidFolder</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>no_parent</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>NoParent</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>invalid_folder_name</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_no_folder_name</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>folder_name_too_big</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>upload_invalid_file_name</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>InvalidName</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_input_params</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>InvalidInput</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_filename_in_use</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>s_folder_exists</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>NameTaken</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_move_node</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_copy_node</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_rename_node</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>e_set_description</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>Generic</span>
+  <span class='comment'># Upload/Download specific responses
+</span>  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>upload_some_files_failed</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>UploadFailed</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>not_enough_free_space</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>AccountExceeded</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>filesize_limit_exceeded</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>SizeExceeded</span>
+  <span class='kw'>else</span>
+    <span class='const'>Unknown</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="copy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>copy</strong>(target, target_id, destination_id) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong> 
+    <div class='inline'><p>
+The api currently only supports copying files.
+</p>
+</div>
+  </div>
+
+<p>
+Copy the the item to a new destination.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>target</span>
+      
+      
+        <span class='type'>(<tt>"file"</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The type of item.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>target_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the item to copy.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>destination_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the parent to copy to.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+217
+218
+219</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 217</span>
+
+<span class='kw'>def</span> <span class='id copy'>copy</span><span class='lparen'>(</span><span class='id target'>target</span><span class='comma'>,</span> <span class='id target_id'>target_id</span><span class='comma'>,</span> <span class='id destination_id'>destination_id</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>s_copy_node</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:copy</span><span class='comma'>,</span> <span class='symbol'>:target</span> <span class='op'>=&gt;</span> <span class='id target'>target</span><span class='comma'>,</span> <span class='symbol'>:target_id</span> <span class='op'>=&gt;</span> <span class='id target_id'>target_id</span><span class='comma'>,</span> <span class='symbol'>:destination_id</span> <span class='op'>=&gt;</span> <span class='id destination_id'>destination_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="create_folder-instance_method">
+  
+    - (<tt>Object</tt>) <strong>create_folder</strong>(parent_id, name, share = 0) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Create a new folder.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>parent_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the parent folder to use.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The name of the newly created folder.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>shared</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The shared state of the new folder.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+197
+198
+199</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 197</span>
+
+<span class='kw'>def</span> <span class='id create_folder'>create_folder</span><span class='lparen'>(</span><span class='id parent_id'>parent_id</span><span class='comma'>,</span> <span class='id name'>name</span><span class='comma'>,</span> <span class='id share'>share</span> <span class='op'>=</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>create_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:create_folder</span><span class='comma'>,</span> <span class='symbol'>:parent_id</span> <span class='op'>=&gt;</span> <span class='id parent_id'>parent_id</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id name'>name</span><span class='comma'>,</span> <span class='symbol'>:share</span> <span class='op'>=&gt;</span> <span class='id share'>share</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="delete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>delete</strong>(target, target_id) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Delete the item.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>target</span>
+      
+      
+        <span class='type'>(<tt>"file"</tt>, <tt>"folder"</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The type of item.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>target_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the item to delete.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+234
+235
+236</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 234</span>
+
+<span class='kw'>def</span> <span class='id delete'>delete</span><span class='lparen'>(</span><span class='id target'>target</span><span class='comma'>,</span> <span class='id target_id'>target_id</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>s_delete_node</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:delete</span><span class='comma'>,</span> <span class='symbol'>:target</span> <span class='op'>=&gt;</span> <span class='id target'>target</span><span class='comma'>,</span> <span class='symbol'>:target_id</span> <span class='op'>=&gt;</span> <span class='id target_id'>target_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="download-instance_method">
+  
+    - (<tt>Object</tt>) <strong>download</strong>(path, file_id, version = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note notetag">
+    <strong>Note:</strong> 
+    <div class='inline'><p>
+You cannot download folders.
+</p>
+</div>
+  </div>
+
+<p>
+Download the file to the given path.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The path to write the file to.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>file_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The file id to download.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>version</span>
+      
+      
+        <span class='type'>(<tt>Optional</tt>, <tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The version of the file to download.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+261
+262
+263
+264
+265</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 261</span>
+
+<span class='kw'>def</span> <span class='id download'>download</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id file_id'>file_id</span><span class='comma'>,</span> <span class='id version'>version</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id open'>open</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>w</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id file'>file</span><span class='op'>|</span>
+    <span class='id file'>file</span> <span class='op'>&lt;&lt;</span> <span class='id query_download'>query_download</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>download</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='lbracket'>[</span> <span class='id file_id'>file_id</span><span class='comma'>,</span> <span class='id version'>version</span> <span class='rbracket'>]</span><span class='rparen'>)</span> <span class='comment'># write the response directly to file
+</span>  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_account_info-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_account_info</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Get the user&#8217;s account info.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+175
+176
+177</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 175</span>
+
+<span class='kw'>def</span> <span class='id get_account_info'>get_account_info</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>get_account_info_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:get_account_info</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_account_tree-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_account_tree</strong>(folder_id, *args) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+  <div class="note todo">
+    <strong>TODO:</strong> 
+    <div class='inline'><p>
+Use zip compression to save bandwidth.
+</p>
+</div>
+  </div>
+
+
+  <div class="note notetag">
+    <strong>Note:</strong> 
+    <div class='inline'><p>
+This function can take a long time for large folders.
+</p>
+</div>
+  </div>
+
+<p>
+Get the entire tree of a given folder.
+</p>
+<p>
+TODO: document the possible arguments.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>folder_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the folder to use.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The arguments to pass along to get_account_tree.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+188
+189
+190</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 188</span>
+
+<span class='kw'>def</span> <span class='id get_account_tree'>get_account_tree</span><span class='lparen'>(</span><span class='id folder_id'>folder_id</span><span class='comma'>,</span> <span class='op'>*</span><span class='id args'>args</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>listing_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:get_account_tree</span><span class='comma'>,</span> <span class='symbol'>:folder_id</span> <span class='op'>=&gt;</span> <span class='id folder_id'>folder_id</span><span class='comma'>,</span> <span class='symbol'>:params</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>nozip</span><span class='tstring_end'>'</span></span> <span class='rbracket'>]</span> <span class='op'>+</span> <span class='id args'>args</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_auth_token-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_auth_token</strong>(ticket) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Request an auth token given a ticket.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ticket</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the ticket to use.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+142
+143
+144</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 142</span>
+
+<span class='kw'>def</span> <span class='id get_auth_token'>get_auth_token</span><span class='lparen'>(</span><span class='id ticket'>ticket</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>get_auth_token_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:get_auth_token</span><span class='comma'>,</span> <span class='symbol'>:ticket</span> <span class='op'>=&gt;</span> <span class='id ticket'>ticket</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_file_info-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_file_info</strong>(file_id) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Get the file info.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>file_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The file id to get info for.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+241
+242
+243</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 241</span>
+
+<span class='kw'>def</span> <span class='id get_file_info'>get_file_info</span><span class='lparen'>(</span><span class='id file_id'>file_id</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>s_get_file_info</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:get_file_info</span><span class='comma'>,</span> <span class='symbol'>:file_id</span> <span class='op'>=&gt;</span> <span class='id file_id'>file_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_ticket-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_ticket</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Request a ticket for authorization
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+135
+136
+137</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 135</span>
+
+<span class='kw'>def</span> <span class='id get_ticket'>get_ticket</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>get_ticket_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:get_ticket</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_response-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>handle_response</strong>(response, expected = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Handle the response of the request.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>response</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The parsed representation of the XML response.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>expected</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the normal status expected to be returned. If the actual status does not
+match, an exception is thrown.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The response if no errors were found.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Api/Exception.html" title="Box::Api::Exception (class)">Exception</a></span></tt>, <tt><span class='object_link'><a href="Api/UnknownResponse.html" title="Box::Api::UnknownResponse (class)">UnknownResponse</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Raises an exception if the response status does not match the expected.
+This exception is determined by <span class='object_link'><a href="#get_exception-class_method" title="Box::Api.get_exception (method)">get_exception</a></span>
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='id handle_response'>handle_response</span><span class='lparen'>(</span><span class='id response'>response</span><span class='comma'>,</span> <span class='id expected'>expected</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id expected'>expected</span>
+    <span class='kw'>begin</span>
+      <span class='id status'>status</span> <span class='op'>=</span> <span class='id response'>response</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>response</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>status</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+    <span class='kw'>rescue</span>
+      <span class='id raise'>raise</span> <span class='const'>UnknownResponse</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown response: </span><span class='embexpr_beg'>#{</span> <span class='id response'>response</span> <span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>unless</span> <span class='id status'>status</span> <span class='op'>==</span> <span class='id expected'>expected</span> <span class='comment'># expected is the normal, successful status for this request
+</span>      <span class='id exception'>exception</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id get_exception'>get_exception</span><span class='lparen'>(</span><span class='id status'>status</span><span class='rparen'>)</span>
+      <span class='id raise'>raise</span> <span class='id exception'>exception</span><span class='comma'>,</span> <span class='id status'>status</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id raise'>raise</span> <span class='const'>ErrorStatus</span><span class='comma'>,</span> <span class='id response'>response</span><span class='period'>.</span><span class='id code'>code</span> <span class='kw'>unless</span> <span class='id response'>response</span><span class='period'>.</span><span class='id success?'>success?</span> <span class='comment'># when the http return code is not normal
+</span>  <span class='id response'>response</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="logout-instance_method">
+  
+    - (<tt>Object</tt>) <strong>logout</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Request the user be logged out.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+155
+156
+157</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 155</span>
+
+<span class='kw'>def</span> <span class='id logout'>logout</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>logout_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:logout</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="move-instance_method">
+  
+    - (<tt>Object</tt>) <strong>move</strong>(target, target_id, destination_id) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Move the item to a new destination.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>target</span>
+      
+      
+        <span class='type'>(<tt>"file"</tt>, <tt>"folder"</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The type of item.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>target_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the item to move.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>destination_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the parent to move to.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+206
+207
+208</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 206</span>
+
+<span class='kw'>def</span> <span class='id move'>move</span><span class='lparen'>(</span><span class='id target'>target</span><span class='comma'>,</span> <span class='id target_id'>target_id</span><span class='comma'>,</span> <span class='id destination_id'>destination_id</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>s_move_node</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:move</span><span class='comma'>,</span> <span class='symbol'>:target</span> <span class='op'>=&gt;</span> <span class='id target'>target</span><span class='comma'>,</span> <span class='symbol'>:target_id</span> <span class='op'>=&gt;</span> <span class='id target_id'>target_id</span><span class='comma'>,</span> <span class='symbol'>:destination_id</span> <span class='op'>=&gt;</span> <span class='id destination_id'>destination_id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="new_copy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_copy</strong>(path, file_id, name = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Upload a new copy of the given file.
+</p>
+<p>
+TODO: Verfiy this does what I think it does
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(see #upload)
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>file_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the file to copy.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>Optional</tt>, <tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Use a new name as well.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+291
+292
+293</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 291</span>
+
+<span class='kw'>def</span> <span class='id new_copy'>new_copy</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id file_id'>file_id</span><span class='comma'>,</span> <span class='id name'>name</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id query_upload'>query_upload</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>new_copy</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id file_id'>file_id</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>upload_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:file</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:new_file_name</span> <span class='op'>=&gt;</span> <span class='id name'>name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="overwrite-instance_method">
+  
+    - (<tt>Object</tt>) <strong>overwrite</strong>(path, file_id, name = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Overwrite the given file with a new one.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(see #upload)
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>file_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Replace the file with this id.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>Optional</tt>, <tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Use a new name as well.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+281
+282
+283</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 281</span>
+
+<span class='kw'>def</span> <span class='id overwrite'>overwrite</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id file_id'>file_id</span><span class='comma'>,</span> <span class='id name'>name</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id query_upload'>query_upload</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>overwrite</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id file_id'>file_id</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>upload_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:file</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:file_name</span> <span class='op'>=&gt;</span> <span class='id name'>name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="query_download-instance_method">
+  
+    - (<tt>Object</tt>) <strong>query_download</strong>(query, args, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Make a download request.
+</p>
+<p>
+TODO: query is not needed, should be set to &#8220;download&#8220;
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>query</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the operation to be performed (&#8220;download&#8221;).
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+an array of arguments to put in the url.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(see #query_rest)
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><p>
+The raw binary data of the file.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id query_download'>query_download</span><span class='lparen'>(</span><span class='id query'>query</span><span class='comma'>,</span> <span class='id args'>args</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='comment'># produces: /download/&lt;auth_token&gt;/&lt;arg1&gt;/&lt;arg2&gt;/&lt;etc&gt;
+</span>  <span class='id url'>url</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span> <span class='ivar'>@base_url</span> <span class='rbrace'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span> <span class='id query'>query</span> <span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@auth_token</span><span class='comma'>,</span> <span class='id args'>args</span> <span class='rbracket'>]</span><span class='period'>.</span><span class='id flatten'>flatten</span><span class='period'>.</span><span class='id compact'>compact</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id query_raw'>query_raw</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>get</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id url'>url</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="query_raw-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>query_raw</strong>(method, url, expected, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Make a raw request.
+</p>
+<p>
+@note: HTTParty will automatically parse the response from its native
+</p>
+<pre class="code">
+       XML to a nested hash/array structure.</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>method</span>
+      
+      
+        <span class='type'>(<tt>'get'</tt>, <tt>'post'</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The HTTP method to use.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>url</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The url to make the request.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>expected</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(see #query_rest)
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(see #query_rest)
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A parsed version of the XML response.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id query_raw'>query_raw</span><span class='lparen'>(</span><span class='id method'>method</span><span class='comma'>,</span> <span class='id url'>url</span><span class='comma'>,</span> <span class='id expected'>expected</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id response'>response</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id method'>method</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>get</span><span class='tstring_end'>'</span></span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id get'>get</span><span class='lparen'>(</span><span class='id url'>url</span><span class='comma'>,</span> <span class='symbol'>:query</span> <span class='op'>=&gt;</span> <span class='ivar'>@default_params</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>post</span><span class='tstring_end'>'</span></span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id post'>post</span><span class='lparen'>(</span><span class='id url'>url</span><span class='comma'>,</span> <span class='symbol'>:query</span> <span class='op'>=&gt;</span> <span class='ivar'>@default_params</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:format</span> <span class='op'>=&gt;</span> <span class='symbol'>:xml</span><span class='rparen'>)</span> <span class='comment'># known bug with api that only occurs with uploads, will be fixed soon
+</span>  <span class='kw'>end</span>
+
+  <span class='id handle_response'>handle_response</span><span class='lparen'>(</span><span class='id response'>response</span><span class='comma'>,</span> <span class='id expected'>expected</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="query_rest-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>query_rest</strong>(expected, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Make a normal REST request.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>expected</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the normal status expected to be returned. If the actual status does not
+match, an exception is thrown.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The parameters that wish to be passed in the request. These should
+coorespond to the api specifications, and will be passed along with the api
+key and auth token.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A parsed version of the XML response.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47
+48
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='id expected'>expected</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id query_raw'>query_raw</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>get</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span> <span class='ivar'>@base_url</span> <span class='rbrace'>}</span><span class='tstring_content'>/rest</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id expected'>expected</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>response</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="query_upload-instance_method">
+  
+    - (<tt>Hash</tt>) <strong>query_upload</strong>(query, args, expected, options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Make an upload request.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>query</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The operation to be performed.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>args</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(see #query_download)
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>expected</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(see #query_rest)
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(see #query_rest)
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+A parsed version of the XML response.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77
+78
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id query_upload'>query_upload</span><span class='lparen'>(</span><span class='id query'>query</span><span class='comma'>,</span> <span class='id args'>args</span><span class='comma'>,</span> <span class='id expected'>expected</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='comment'># produces: /upload/&lt;auth_token&gt;/&lt;arg1&gt;/&lt;arg2&gt;/&lt;etc&gt;
+</span>  <span class='id url'>url</span> <span class='op'>=</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span> <span class='ivar'>@upload_url</span> <span class='rbrace'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span> <span class='id query'>query</span> <span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='ivar'>@auth_token</span><span class='comma'>,</span> <span class='id args'>args</span> <span class='rbracket'>]</span><span class='period'>.</span><span class='id flatten'>flatten</span><span class='period'>.</span><span class='id compact'>compact</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id query_raw'>query_raw</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>post</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id url'>url</span><span class='comma'>,</span> <span class='id expected'>expected</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>response</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="register_new_user-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_new_user</strong>(email, password) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Register a new user.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>email</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The email address to use.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>password</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The password to use.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+163
+164
+165</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 163</span>
+
+<span class='kw'>def</span> <span class='id register_new_user'>register_new_user</span><span class='lparen'>(</span><span class='id email'>email</span><span class='comma'>,</span> <span class='id password'>password</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>successful_register</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:register_new_user</span><span class='comma'>,</span> <span class='symbol'>:login</span> <span class='op'>=&gt;</span> <span class='id email'>email</span><span class='comma'>,</span> <span class='symbol'>:password</span> <span class='op'>=&gt;</span> <span class='id password'>password</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="rename-instance_method">
+  
+    - (<tt>Object</tt>) <strong>rename</strong>(target, target_id, new_name) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Rename the item.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>target</span>
+      
+      
+        <span class='type'>(<tt>"file"</tt>, <tt>"folder"</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The type of item.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>target_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the item to rename.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>new_name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The new name to be used.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+226
+227
+228</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 226</span>
+
+<span class='kw'>def</span> <span class='id rename'>rename</span><span class='lparen'>(</span><span class='id target'>target</span><span class='comma'>,</span> <span class='id target_id'>target_id</span><span class='comma'>,</span> <span class='id new_name'>new_name</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>s_rename_node</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:rename</span><span class='comma'>,</span> <span class='symbol'>:target</span> <span class='op'>=&gt;</span> <span class='id target'>target</span><span class='comma'>,</span> <span class='symbol'>:target_id</span> <span class='op'>=&gt;</span> <span class='id target_id'>target_id</span><span class='comma'>,</span> <span class='symbol'>:new_name</span> <span class='op'>=&gt;</span> <span class='id new_name'>new_name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="set_auth_token-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_auth_token</strong>(auth_token) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Add the auth token to every request.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>auth_token</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The auth token to add to every request.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+149
+150
+151
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 149</span>
+
+<span class='kw'>def</span> <span class='id set_auth_token'>set_auth_token</span><span class='lparen'>(</span><span class='id auth_token'>auth_token</span><span class='rparen'>)</span>
+  <span class='ivar'>@auth_token</span> <span class='op'>=</span> <span class='id auth_token'>auth_token</span>
+  <span class='ivar'>@default_params</span><span class='lbracket'>[</span><span class='symbol'>:auth_token</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id auth_token'>auth_token</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="set_description-instance_method">
+  
+    - (<tt>Object</tt>) <strong>set_description</strong>(target, target_id, description) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Set the item description.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>target</span>
+      
+      
+        <span class='type'>(<tt>"file"</tt>, <tt>"folder"</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The type of item.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>target_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The id of the item to describe.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>description</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The description to use.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+250
+251
+252</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 250</span>
+
+<span class='kw'>def</span> <span class='id set_description'>set_description</span><span class='lparen'>(</span><span class='id target'>target</span><span class='comma'>,</span> <span class='id target_id'>target_id</span><span class='comma'>,</span> <span class='id description'>description</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>s_set_description</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:set_description</span><span class='comma'>,</span> <span class='symbol'>:target</span> <span class='op'>=&gt;</span> <span class='id target'>target</span><span class='comma'>,</span> <span class='symbol'>:target_id</span> <span class='op'>=&gt;</span> <span class='id target_id'>target_id</span><span class='comma'>,</span> <span class='symbol'>:description</span> <span class='op'>=&gt;</span> <span class='id description'>description</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="upload-instance_method">
+  
+    - (<tt>Object</tt>) <strong>upload</strong>(path, folder_id, new_copy = false) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Upload the file to the specified folder.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>path</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Upload the file at the given path.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>folder_id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The folder id of the parent folder to use.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>new_copy</span>
+      
+      
+        <span class='type'>(<tt>Optional</tt>, <tt>Boolean</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>false</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+Upload a new copy instead of overwriting.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+272
+273
+274</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 272</span>
+
+<span class='kw'>def</span> <span class='id upload'>upload</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id folder_id'>folder_id</span><span class='comma'>,</span> <span class='id new_copy'>new_copy</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='id query_upload'>query_upload</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>upload</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id folder_id'>folder_id</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>upload_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:file</span> <span class='op'>=&gt;</span> <span class='op'>::</span><span class='const'>File</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id path'>path</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:new_copy</span> <span class='op'>=&gt;</span> <span class='id new_copy'>new_copy</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="verify_registration_email-instance_method">
+  
+    - (<tt>Object</tt>) <strong>verify_registration_email</strong>(email) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Verify a registration email.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>email</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+The email address to check.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+170
+171
+172</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/box/api.rb', line 170</span>
+
+<span class='kw'>def</span> <span class='id verify_registration_email'>verify_registration_email</span><span class='lparen'>(</span><span class='id email'>email</span><span class='rparen'>)</span>
+  <span class='id query_rest'>query_rest</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>email_ok</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:action</span> <span class='op'>=&gt;</span> <span class='symbol'>:verify_registration_email</span><span class='comma'>,</span> <span class='symbol'>:login</span> <span class='op'>=&gt;</span> <span class='id email'>email</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Mon Aug  8 10:24:42 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

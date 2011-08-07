@@ -2,28 +2,49 @@ require 'box/api'
 require 'box/folder'
 
 module Box
+  # Represents an account on Box. In order to use the Box api, the user
+  # must first grant the application permission to use their account. This
+  # is done in the {#authorize} function. Once an account has been
+  # authorized, it can access all of the details and information stored
+  # on that account.
+
   class Account
     attr_reader :api, :ticket, :auth_token
 
-    # setup the api using our api_key
+    # Creates an account object using the given Box api key.
+    # You can then {#register} a new account or {#authorize} an
+    # existing account.
+    #
+    # @param [String, Api] api the api key to use for the Box api.
     def initialize(api)
       @api = case
         when api.class == Box::Api; api # use the api object as passed in
-        else; Box::Api.new(api) # allows user to pass in the api_key rather than make a new API object themselves
+        else; Box::Api.new(api) # allows user to pass in a string
       end
     end
 
-    #### AUTHENTICATION SECTION ####
-    # register the user with the given details
+    # Register a new account on the Box website with the given details.
+    #
+    # @param [String] email The email address to create the account with
+    # @param [String] password The password to create the account with
+    # @return [Boolean] Whether registration was successful.
+    #
+    # @raise [Api::EmailInvalid] The email address was invalid
+    # @raise [Api::EmailTaken] The email address was taken
+    #
     def register(email, password)
-      # note: this function can throw EmailInvalid and EmailTaken
       response = @api.register_new_user(email, password)
 
-      cache_info(response['user']) # cache account_info, saves an extra API call
+      cache_info(response['user']) # cache account_info, saving an extra API call
       authorize_token(response['token'])
     end
 
-    # logout, rendering any auth_token useless
+    # Log out of the account and invalidate the auth token.
+    #
+    # @note The user will have to re-authorize if they wish to use this
+    #       application, and the auth token will no longer work.
+    #
+    # @return [Boolean] Whether logout was successful.
     def logout
       begin
         @api.logout
@@ -35,52 +56,147 @@ module Box
       true
     end
 
-    # authorize the application either using a saved auth_token or ask for a new token
-    def authorize(auth_token = self.auth_token)
-      return true if auth_token and authorize_token(auth_token) # saved auth_tokens significantly speed up the authentication process
-
-      if block_given? and not authorize_ticket # if we cannot authorize the ticket, the user needs to visit a web page and give our app permission
-        yield authorize_url # the supplied block should instruct the user to visit this url, returning once they have
-        authorize_ticket # try authorizing again, assuming the user has authed now
+    # Authorize the account using the given auth token, or request
+    # permission from the user to let this application use their account.
+    #
+    # An auth token can be reused from previous authorizations provided the
+    # user doesn't log out, and significantly speeds up the process. If the
+    # auth token if invalid or not provided, the account tries to log in
+    # normally and requires the user to log in and provide access for their
+    # account.
+    #
+    # @param [Optional, String] auth_token Uses an existing token or requests
+    #        a new one if nil.
+    # @yield [authorize_url] This block called when the user has not yet
+    #        granted this application permission to use their account. You
+    #        must have the user navigate to the passed url and authorize
+    #        this app before continuing.
+    # @return [Boolean] Whether the user is authorized.
+    #
+    # @example Authorize an account without a saved auth token.
+    #   account.authorize do |auth_url|
+    #     puts "Please visit #{ auth_url } and enter your account infomation"
+    #     puts "Press the enter key once you have done this."
+    #     gets # wait for the enter key to be pressed
+    #   end
+    #
+    # @example Authorize an account using an existing auth token.
+    #   auth_token = "saved auth token" # load from file ideally
+    #   account.authorize(auth_token)
+    #
+    # @example Combining the above two for the best functionality.
+    #   auth_token = "saved auth token" # load from file if possible
+    #   account.authorize(auth_token) do |auth_url|
+    #     # auth token was invalid or nil, have the user visit auth_url
+    #   end
+    #
+    def authorize(auth_token = nil)
+      # use a saved auth token if it is given
+      if auth_token
+        return true if authorize_token(auth_token)
       end
 
+      # the auth token either failed or was not provided
+      # we must try to authorize a ticket, and call the block if that fails
+      if not authorize_ticket and block_given?
+        # the supplied block should instruct the user to visit this url
+        yield authorize_url
+
+        # try authorizing once more
+        authorize_ticket
+      end
+
+      # return our authorized status
       authorized?
     end
 
-    # tickets are used to associate authentication attempts, so each user needs their own ticket
+    # Get the cached ticket or request a new one from the Box api.
+    #
+    # @deprecated This function should not be used externally, and will
+    #             be made protected. Is only used for caching.
+    #
+    # @return [String] the authorization ticket.
+    #
     def ticket
       @ticket ||= @api.get_ticket['ticket']
     end
 
-    # the user must visit this url to allow the application to access their account
+    # The url the user needs to visit in order to grant this application
+    # permission to use their account. This requires a ticket, which
+    # is either pulled from the cache or requested.
+    #
+    # @deprecated This function should not be used externally, and will be
+    #             made protected. The url will be passed to the block given
+    #             in {#authorize} when it is required.
+    #
+    # @param [Optional, String] ticket use the ticket for the url.
+    #         If no ticket is provided, one will be requested and cached.
+    # @return [String] the url used for authorizing this account.
+    #
     def authorize_url(ticket = self.ticket)
       "#{ api.base_url }/auth/#{ ticket }"
     end
 
-    # using the ticket, we get the auth_token providing the user has already allowed our application the privilege
-    def authorize_ticket(ticket = self.ticket) # note: self.ticket will request a ticket if none exists, not the same as @ticket
+    # Attempt to authorize this account using the given ticket. This will
+    # only succeed if the user has granted this ticket permission, done
+    # by visiting and logging into the {#authorize_url}.
+    #
+    # @deprecated This function should not be used externally, and will be
+    #             made protected. Authorizing using a saved ticket is
+    #             risky, and a new ticket should be requested in all cases.
+    #             Use {#authorize} instead.
+    #
+    # @param [Optional, String] ticket the ticket used for authorization.
+    #         If no ticket is provided, one will be requested and cached.
+    # @return [String, nil] The auth token if successful otherwise, nil.
+    #
+    def authorize_ticket(ticket = self.ticket)
       begin
         response = @api.get_auth_token(ticket)
 
-        cache_info(response['user']) # cache account_info, saves an extra API call
+        cache_info(response['user']) # saves an extra API call
         authorize_token(response['auth_token'])
       rescue Api::NotAuthorized
-        false
+        nil
       end
     end
 
-    # we have a token, and we have to save it and check if it is valid
+    # Use and save the given auth token if it is valid.
+    #
+    # @deprecated This function should not be used externally, and will
+    #             be made protected. Is only used for caching.
+    #
+    # @param [Optional, String] auth_token the auth token to save.
+    #         If no token if provided, the cached one will be used.
+    #
     def authorize_token(auth_token = self.auth_token)
+      # TODO: I feel like the logic will fail often here.
+      # TODO: Default paramater makes no sense.
       @api.set_auth_token(auth_token)
-      @auth_token = auth_token if authorized? # set auth token if successful
+      @auth_token = auth_token if authorized? # cache token if successful
     end
 
-    # we are authorized if we have the user's account info
+    # Return if the account is authorized or not.
+    #
+    # @note This method will make a network request if the user does not
+    #       have cached account info.
+    #
+    # @return [Boolean] Whether the user is authorized.
+    #
     def authorized?
+      # TODO: Don't make a network request.
       info != nil
     end
 
-    # return the cached account info, or request it
+    # Return the account details. A cached copy will be used if avaliable,
+    # and requested if it is not.
+    #
+    # @return [Hash] A hash containing all of the user's account
+    #         details, or nil if they are not authorized. Please see the
+    #         Box api documentation for information about each field.
+    #
+    # TODO: Add url to Box api documentation, and provide the current fields.
+    #
     def info
       return @info if @info
 
@@ -92,7 +208,12 @@ module Box
       end
     end
 
-    # return the root of the user's folder structure
+    # Get the root folder of the account. You can use this {Folder} object
+    # to access all sub items within the account. This folder is lazy loaded,
+    # and a network request will be made if/when the data is requested.
+    #
+    # @return [Folder] A folder object representing the root folder.
+    #
     def root
       return @root if @root
       @root = Box::Folder.new(@api, nil, :id => 0)
@@ -100,7 +221,8 @@ module Box
 
     protected
 
-    # cache account info, possibly from get_auth_token, register_new_user, or get_account_info
+    # Cache the account info.
+    # @param [Hash] info The account info to cache.
     def cache_info(info)
       @info = info
     end

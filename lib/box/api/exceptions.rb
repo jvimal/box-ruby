@@ -29,6 +29,10 @@ module Box
     class AccountExceeded < Exception; end
     class SizeExceeded < Exception; end
 
+    # Given a status, returning a cooresponding Exception class.
+    #
+    # @param [String] status The failing status to look for.
+    # @return [Exception] A coorespondng Exception.
     def self.get_exception(status)
       case status
       # Common responses

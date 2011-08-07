@@ -24,19 +24,19 @@ account = Box::Account.new(app_data['api_key'])
 auth_token = app_data['auth_token']
 
 # now we have enough information to log into the box api, so we try to authorize using the auth token
-authed = account.authorize(auth_token) do |auth_url|
+account.authorize(auth_token) do |auth_url|
   # this block is called if the auth_token is invalid or missing
 
   # we use launchy to open a new browser, but you can do it however you want
   Launchy.open(auth_url)
 
   # make sure you pause until the user has authorized, or just tell them to restart the program
-  puts "Hit any key once you have logged in on the opened web page."
+  puts "Please press the enter key once you have authorized this application to use your account"
   gets
 end
 
-unless authed
-  # the user didn't auth like we told them to, so we can't access anything
+unless account.authorized?
+  # the user didn't authorize like we told them to, so we can't access anything
   puts "Unable to login, please try again."
   exit
 end

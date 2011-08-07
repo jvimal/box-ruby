@@ -1,15 +1,24 @@
 require 'box/item'
 
 module Box
+  # Represents a file stored on Box. Any attributes or actions typical to
+  # a Box file can be accessed through this class.
+
   class File < Item
+    # (see Item.type)
     def self.type; 'file'; end
 
-    # download the file to the specified path
+    # Download this file to the specified path.
+    #
+    # @param [String] path The path to write the file.
     def download(path)
       @api.download(path, id)
     end
 
-    # overwrite this file, using the file at the specified path
+    # Overwrite this file, using the file at the specified path
+    #
+    # @param [String] path The path to the file to upload.
+    # @return [File] self
     def upload_overwrite(path)
       info = @api.overwrite(path, id)['files']['file']
 
@@ -19,7 +28,11 @@ module Box
       self
     end
 
-    # upload a new copy of this file, the name being 'file (#).ext' for the #th copy
+    # Upload a new copy of this file. The name will be "file (#).ext"
+    # for the each additional copy.
+    #
+    # @param path (see #upload_overwrite)
+    # @return [File] The newly created file.
     def upload_copy(path)
       info = @api.new_copy(path, id)['files']['file']
       parent.delete_info('files')
@@ -29,7 +42,7 @@ module Box
 
     protected
 
-    # get the file info
+    # (see Item#get_info)
     def get_info
       @api.get_file_info(id)['info']
     end
