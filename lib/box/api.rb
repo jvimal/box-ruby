@@ -12,7 +12,11 @@ module Box
     # an extension of HTTParty, adding multi-part upload support
     include HTTMultiParty
 
-    attr_accessor :base_url, :upload_url
+    # @return [String] The base url of the box api.
+    attr_accessor :base_url
+
+    # @return [String] The upload url of the box api.
+    attr_accessor :upload_url
 
     # Create a new API object using the given parameters.
     #
@@ -58,10 +62,9 @@ module Box
     #
     # @return The raw binary data of the file.
     #
-    # TODO: query is not needed, should be set to "download"
-    def query_download(query, args, options = {})
+    def query_download(args, options = {})
       # produces: /download/<auth_token>/<arg1>/<arg2>/<etc>
-      url = [ "#{ @base_url }/#{ query }", @auth_token, args ].flatten.compact.join('/')
+      url = [ "#{ @base_url }/download", @auth_token, args ].flatten.compact.join('/')
       query_raw('get', url, nil, options)
     end
 
@@ -262,7 +265,7 @@ module Box
     # @param [Optional, String] version The version of the file to download.
     def download(path, file_id, version = nil)
       ::File.open(path, 'w') do |file|
-        file << query_download('download', [ file_id, version ]) # write the response directly to file
+        file << query_download([ file_id, version ]) # write the response directly to file
       end
     end
 

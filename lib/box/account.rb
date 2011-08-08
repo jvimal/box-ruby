@@ -9,7 +9,8 @@ module Box
   # on that account.
 
   class Account
-    attr_reader :api, :ticket, :auth_token
+    # @return [String] The auth token if authorization was successful.
+    attr_reader :auth_token
 
     # Creates an account object using the given Box api key.
     # You can then {#register} a new account or {#authorize} an
@@ -37,21 +38,6 @@ module Box
 
       cache_info(response['user']) # cache account_info, saving an extra API call
       authorize_token(response['token'])
-    end
-
-    # Log out of the account and invalidate the auth token.
-    #
-    # @note The user will have to re-authorize if they wish to use this
-    #       application, and the auth token will no longer work.
-    #
-    # @return [Boolean] Whether logout was successful.
-    def logout
-      begin
-        @api.logout
-        authorize_token(nil)
-      rescue Api::NotAuthorized
-        # already logged out, or never logged in
-      end
 
       true
     end
@@ -110,97 +96,39 @@ module Box
       authorized?
     end
 
-    # Get the cached ticket or request a new one from the Box api.
+    # Log out of the account and invalidate the auth token.
     #
-    # @deprecated This function should not be used externally, and will
-    #             be made protected. Is only used for caching.
+    # @note The user will have to re-authorize if they wish to use this
+    #       application, and the auth token will no longer work.
     #
-    # @return [String] the authorization ticket.
+    # @return [Boolean] Whether logout was successful.
     #
-    def ticket
-      @ticket ||= @api.get_ticket['ticket']
-    end
-
-    # The url the user needs to visit in order to grant this application
-    # permission to use their account. This requires a ticket, which
-    # is either pulled from the cache or requested.
-    #
-    # @deprecated This function should not be used externally, and will be
-    #             made protected. The url will be passed to the block given
-    #             in {#authorize} when it is required.
-    #
-    # @param [Optional, String] ticket use the ticket for the url.
-    #         If no ticket is provided, one will be requested and cached.
-    # @return [String] the url used for authorizing this account.
-    #
-    def authorize_url(ticket = self.ticket)
-      "#{ api.base_url }/auth/#{ ticket }"
-    end
-
-    # Attempt to authorize this account using the given ticket. This will
-    # only succeed if the user has granted this ticket permission, done
-    # by visiting and logging into the {#authorize_url}.
-    #
-    # @deprecated This function should not be used externally, and will be
-    #             made protected. Authorizing using a saved ticket is
-    #             risky, and a new ticket should be requested in all cases.
-    #             Use {#authorize} instead.
-    #
-    # @param [Optional, String] ticket the ticket used for authorization.
-    #         If no ticket is provided, one will be requested and cached.
-    # @return [String, nil] The auth token if successful otherwise, nil.
-    #
-    def authorize_ticket(ticket = self.ticket)
+    def logout
       begin
-        response = @api.get_auth_token(ticket)
-
-        cache_info(response['user']) # saves an extra API call
-        authorize_token(response['auth_token'])
+        @api.logout
+        cache_token(nil)
       rescue Api::NotAuthorized
-        nil
+        # already logged out, or never logged in
       end
-    end
 
-    # Use and save the given auth token if it is valid.
-    #
-    # @deprecated This function should not be used externally, and will
-    #             be made protected. Is only used for caching.
-    #
-    # @param [Optional, String] auth_token the auth token to save.
-    #         If no token if provided, the cached one will be used.
-    #
-    def authorize_token(auth_token = self.auth_token)
-      # TODO: I feel like the logic will fail often here.
-      # TODO: Default paramater makes no sense.
-      @api.set_auth_token(auth_token)
-      @auth_token = auth_token if authorized? # cache token if successful
-    end
-
-    # Return if the account is authorized or not.
-    #
-    # @note This method will make a network request if the user does not
-    #       have cached account info.
-    #
-    # @return [Boolean] Whether the user is authorized.
-    #
-    def authorized?
-      # TODO: Don't make a network request.
-      info != nil
+      true
     end
 
     # Return the account details. A cached copy will be used if avaliable,
     # and requested if it is not.
     #
+    # @param [Boolean] refresh Will not use the cached version if true.
     # @return [Hash] A hash containing all of the user's account
     #         details, or nil if they are not authorized. Please see the
     #         Box api documentation for information about each field.
     #
     # TODO: Add url to Box api documentation, and provide the current fields.
     #
-    def info
-      return @info if @info
+    def info(refresh = false)
+      return @info if @info and not refresh
 
       begin
+        cache_info(nil) # reset existing info
         info = @api.get_account_info['user']
         cache_info(info)
       rescue Api::NotAuthorized, Api::InvalidInput
@@ -219,7 +147,74 @@ module Box
       @root = Box::Folder.new(@api, nil, :id => 0)
     end
 
+    # @return [Boolean] Is the account authorized?
+    def authorized?
+      @info != nil
+    end
+
     protected
+
+    # @return [Api] The api currently in use.
+    attr_reader :api
+
+    # Get the cached ticket or request a new one from the Box api.
+    # @return [String] The authorization ticket.
+    def ticket
+      @ticket ||= @api.get_ticket['ticket']
+    end
+
+    # The url the user needs to visit in order to grant this application
+    # permission to use their account. This requires a ticket, which
+    # is either pulled from the cache or requested.
+    #
+    # @param [String] ticket Use the ticket for the url.
+    #         If no ticket is provided, one will be requested and cached.
+    # @return [String] the url used for authorizing this account.
+    #
+    def authorize_url(ticket = self.ticket)
+      "#{ api.base_url }/auth/#{ ticket }"
+    end
+
+    # Attempt to authorize this account using the given ticket. This will
+    # only succeed if the user has granted this ticket permission, done
+    # by visiting and logging into the {#authorize_url}.
+    #
+    # @param [String] ticket The ticket used for authorization.
+    #         If no ticket is provided, one will be requested and cached.
+    # @return [String, nil] The auth token if successful otherwise, nil.
+    #
+    def authorize_ticket(ticket = self.ticket)
+      begin
+        response = @api.get_auth_token(ticket)
+
+        cache_info(response['user']) # saves an extra API call
+        cache_token(response['auth_token'])
+      rescue Api::NotAuthorized
+        nil
+      end
+    end
+
+    # Attempt to authorize this account using the given auth token. This
+    # will only succeed if the auth token has been used before, and
+    # be done to make login easier.
+    #
+    # @param [String] auth_token The auth token to attempt to use
+    # @return [Boolean] If the attempt was successful.
+    #
+    def authorize_token(auth_token)
+      cache_token(auth_token)
+      info(true) # force a refresh
+
+      authorized?
+    end
+
+    # Use and cache the given auth token.
+    # @param [String] auth_token The auth token to cache.
+    # @return [String] The auth token.
+    def cache_token(auth_token)
+      @api.set_auth_token(auth_token)
+      @auth_token = auth_token
+    end
 
     # Cache the account info.
     # @param [Hash] info The account info to cache.

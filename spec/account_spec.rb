@@ -9,10 +9,6 @@ describe Box::Account do
       @account = get_account(false)
     end
 
-    it "gets a ticket" do
-      @account.ticket.should_not == nil
-    end
-
     it "fails to authorize without auth token" do
       @account.authorize.should == false
     end
