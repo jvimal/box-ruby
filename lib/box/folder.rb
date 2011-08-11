@@ -105,6 +105,7 @@ module Box
     def force_cached_info
       create_sub_items(nil, Box::Folder)
       create_sub_items(nil, Box::File)
+
       super
     end
 
@@ -112,11 +113,9 @@ module Box
     # when we know the item is fully fetched.
     def force_cached_tree
       @cached_tree = true
-      force_cached_info
 
-      files.each do |file|
-        file.force_cached_info
-      end
+      create_sub_items(nil, Box::Folder)
+      create_sub_items(nil, Box::File)
 
       folders.each do |folder|
         folder.force_cached_tree
@@ -135,7 +134,7 @@ module Box
     # Fetch the folder tree from the api.
     # @return [Hash] The folder tree.
     def get_tree
-      @api.get_account_tree(id)['tree']['folder']
+      @api.get_account_tree(id, 'simple')['tree']['folder']
     end
 
     # (see Item#clear_info)

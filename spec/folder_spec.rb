@@ -77,8 +77,8 @@ describe Box::Folder do
           file.should be nil
         end
 
-        it "finds specified criteria" do
-          file = @root.find(:type => 'file', :sha1 => 'f7379ffe883fdc355fbe47e8a4b3073f21ac0f6d', :recursive => true).first
+        it "finds multiple criteria" do
+          file = @root.find(:type => 'file', :id => '61669270', :recursive => true).first
           file.id.should == '61669270'
           file.name.should == 'file.pdf'
         end
@@ -88,14 +88,8 @@ describe Box::Folder do
           file.should == nil
         end
 
-        it "finds multiple criteria" do
-          file = @root.find(:updated => 1304959908, :size => 20372, :recursive => true).first
-          file.id.should == '61679546'
-          file.name.should == 'expected.3.swf'
-        end
-
         it "requires both criteria" do
-          file = @root.find(:updated => 1304, :size => 20372, :recursive => true).first
+          file = @root.find(:id => 7068024, :name => "notswf", :recursive => true).first
           file.should be nil
         end
       end
