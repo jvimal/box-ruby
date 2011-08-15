@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "box-api"
-  s.version     = "0.1.7"
+  s.version     = "0.1.8"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Box.net", "Luke Curley"]
   s.email       = ["luke@box.net"]
